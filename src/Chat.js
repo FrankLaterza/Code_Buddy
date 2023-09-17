@@ -1,28 +1,33 @@
 import './Chat.css';
 import React, { useState } from 'react';
+import chatRequest from './apis/gpt';
 
 function Chat()  {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
 
-  const handleInputChange = (e) => {
+  function handleInputChange(e) {
     setInputText(e.target.value);
   };
 
-  const handleSendMessage = () => {
+  function handleSendMessage() {
     if (inputText.trim() === '') return;
 
     // Create a new message object
     const newMessage = {
       text: inputText,
-      user: 'Yo', // You can customize this based on the sender
+      user: 'You',
     };
 
     // Update the messages state
     setMessages([...messages, newMessage]);
 
-    // Clear the input field
+    chatRequest(inputText, messages, setMessages);
+    // Clear the input field 
     setInputText('');
+
+
+
   };
 
   return (
@@ -38,14 +43,15 @@ function Chat()  {
         ))}
       </div>
       <div className="input-container">
-        <input
+        <input  
           type="text"
-          placeholder="Type your message..."
+          placeholder="Talk to me..."
           value={inputText}
           onChange={handleInputChange}
         />
         <button onClick={handleSendMessage}>Send</button>
       </div>
+      {/* <button onClick={sendMessageGpt}>GPT</button> */}
     </div>
   );
 };

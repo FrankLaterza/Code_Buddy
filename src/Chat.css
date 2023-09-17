@@ -1,6 +1,7 @@
 /* Chat.css */
 .chat-container {
-    width: 300px;
+    width: 80%;
+    min-height: 100%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;

@@ -1,55 +1,89 @@
 /* Chat.css */
+
+.butt {
+  color: #EF16FE;
+}
 .chat-container {
-    width: 300px;
+    width: 80%;
+    height: 100%;
+   
+    
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    background-color: #050816;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+
   }
+
+  
+  
   
   .message-list {
-    max-height: 300px;
+    max-height: 100%;
     overflow-y: scroll;
     margin-bottom: 10px;
+    width: 100%;
   }
   
   .message {
     padding: 10px;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 16px;
+    
   }
   
   .message.user {
-    background-color: #007bff;
+    background-color: #EF16FE;
     color: #fff;
     text-align: right;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
   }
   
   .message.other {
+    width:fit-content;
     background-color: #f0f0f0;
     color: #333;
     text-align: left;
+    display: flex;
+    justify-content: flex-start;
+
   }
   
   .input-container {
     display: flex;
+    width: 100%;
+   
   }
   
   .input-container input {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 5px;
     font-size: 16px;
+  }
+
+  .Input{
+    background-color: #151f30;
+    border-radius: 11px;
+    align-items: center;
+    color: white;
+   
   }
   
   .input-container button {
     padding: 10px 20px;
     margin-left: 10px;
-    background-color: #007bff;
+    background-color: #C016FE;
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -58,6 +92,7 @@
   }
   
   .input-container button:hover {
-    background-color: #0056b3;
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .9);
   }
   

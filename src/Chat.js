@@ -6,11 +6,11 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
 
-  const handleInputChange = (e) => {
+  function handleInputChange(e) {
     setInputText(e.target.value);
   };
 
-  const handleSendMessage = () => {
+  function handleSendMessage() {
     if (inputText.trim() === '') return;
 
     // Create a new message object
@@ -22,8 +22,12 @@ function Chat() {
     // Update the messages state
     setMessages([...messages, newMessage]);
 
-    // Clear the input field
+    chatRequest(inputText, messages, setMessages);
+    // Clear the input field 
     setInputText('');
+
+
+
   };
 
   useEffect(() => {
@@ -70,6 +74,7 @@ function Chat() {
           <AiOutlineSend />
         </button>
       </div>
+      {/* <button onClick={sendMessageGpt}>GPT</button> */}
     </div>
   );
 }

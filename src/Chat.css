@@ -6,7 +6,7 @@
 .chat-container {
     width: 80%;
     height: 100%;
-    flex-grow: 1;
+   
     
     margin: 0 auto;
     padding: 20px;
@@ -25,9 +25,10 @@
   
   
   .message-list {
-    max-height: 300px;
-    overflow-y: hidden;
+    max-height: 100%;
+    overflow-y: scroll;
     margin-bottom: 10px;
+    width: 100%;
   }
   
   .message {
@@ -35,14 +36,16 @@
     margin: 5px;
     border-radius: 15px;
     font-size: 16px;
-    width: auto;
+    
   }
   
   .message.user {
     background-color: #EF16FE;
     color: #fff;
     text-align: right;
-    width: auto;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
   }
   
   .message.other {
@@ -50,6 +53,8 @@
     background-color: #f0f0f0;
     color: #333;
     text-align: left;
+    display: flex;
+    justify-content: flex-start;
 
   }
   

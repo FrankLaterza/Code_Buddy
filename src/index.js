@@ -1,14 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
-import Chat from './Chat'
+import Landing from './Landing';
+import Contact from './Contact';
+import Chat from './Chat';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <Chat />
-  </React.StrictMode>
+    <Router>
+      <Switch>
+        <Route path="/landing" component={Landing} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/chat" component={Chat} />
+      </Switch>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
